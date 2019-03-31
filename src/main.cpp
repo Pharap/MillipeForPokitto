@@ -1,3 +1,5 @@
+// IsArduboy.h must be included before Arduboy2.h
+#include "IsArduboy.h"
 #include <Arduboy2.h>
 
 #include <stddef.h>

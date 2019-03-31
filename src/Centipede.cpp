@@ -57,8 +57,10 @@ void CentipedeSegment::damage()
 {
 	this->active = false;
 
+	#if IS_ARDUBOY
 	sound.noTone();
 	sound.tone(NOTE_E3H, 50);
+	#endif
 
 	for(uint8_t i = 0; i < maxMushrooms; ++i)
 	{

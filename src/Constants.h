@@ -31,6 +31,8 @@
 #include <stddef.h>
 #include <stdint.h>
 
+// IsArduboy.h must be included before Arduboy2.h
+#include "IsArduboy.h"
 #include <Arduboy2.h>
 
 constexpr size_t maxbullets = 3;

@@ -28,8 +28,13 @@
 // Reformatted by Pharap
 //
 
+// IsArduboy.h must be included before Arduboy2.h
+#include "IsArduboy.h"
 #include <Arduboy2.h>
+
+#if IS_ARDUBOY
 #include <ArduboyTones.h>
+#endif
 
 #include "GameState.h"
 #include "Player.h"
@@ -39,7 +44,9 @@
 
 extern Arduboy2 arduboy;
 
+#if IS_ARDUBOY
 extern ArduboyTones sound;
+#endif
 
 extern GameState gameState;
 

@@ -1,5 +1,7 @@
 #include "Player.h"
 
+// IsArduboy.h must be included before Arduboy2.h
+#include "IsArduboy.h"
 #include <Arduboy2.h>
 
 #include "Constants.h"
@@ -32,8 +34,10 @@ void Player::move()
 			{
 				bullets[i].set(0, x);
 
+				#if IS_ARDUBOY
 				sound.noTone();
 				sound.tone(NOTE_D2, 50);
+				#endif
 				break;
 			}
 		}

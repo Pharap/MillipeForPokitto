@@ -122,8 +122,10 @@ void updateMainMenu()
 
 	if (arduboy.justPressed(A_BUTTON))
 	{
+		#if IS_ARDUBOY
 		sound.noTone();
 		sound.tone(NOTE_C5, 50);
+		#endif
 
 		gameState = GameState::Init;
 	}
@@ -132,10 +134,12 @@ void updateMainMenu()
 	{
 		bool audio = !arduboy.audio.enabled();
 
+		#if IS_ARDUBOY
 		arduboy.audio.on();
 		sound.noTone();
 		sound.tone(NOTE_C4, 50);
 		arduboy.audio.off();
+		#endif
 
 		if (audio)
 			arduboy.audio.on();
@@ -266,8 +270,10 @@ void Gameupdate()
 
 	if (!checkAlive())
 	{
+		#if IS_ARDUBOY
 		sound.noTone();
 		sound.tone(NOTE_C5, 50, NOTE_E5, 50, NOTE_G5, 50);
+		#endif
 
 		gameState = GameState::NextLevel;
 	}

@@ -30,7 +30,9 @@
 
 Arduboy2 arduboy;
 
+#if IS_ARDUBOY
 ArduboyTones sound(arduboy.audio.enabled);
+#endif
 
 GameState gameState = GameState::MainMenu;
 
